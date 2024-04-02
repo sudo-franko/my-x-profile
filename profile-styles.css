@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     /* Color default de Twitter 🐦️: background-color: #00acee; */
-    background-image: url(./assets/background.jpg);
+    background-image: url(./img/background.jpg);
     background-size: cover;
     background-position: center;
     height: 100%;
