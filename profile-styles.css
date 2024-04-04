@@ -1,15 +1,20 @@
-@font-face {
+@font-face { /* Declaramos la fuente de Twitter 🐦️: */
     font-family: 'Chirp Regular';
     src: url('./fonts/ChirpRegular.ttf') format('truetype');
 }
 
-* {
+* { /* Asignamos propiedades iniciales a todos los elementos: */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-color: black;
-    color: white;
+}
+
+html { /* Propiedades heredadas a casi todos los elementos: */
+    font-size: 62.5%; /* 1rem = 10px */
     font-family: 'Chirp Regular', sans-serif;
+    color-scheme: light dark;
+    color: white;
 }
 
 body {
@@ -20,31 +25,21 @@ body {
     background-image: url(./img/background.jpg);
     background-size: cover;
     background-position: center;
-    height: 100%;
 }
 
-main {
-    width: 600px;
-    height: 1400px;
-    overflow: hidden;
-    border-left: 1px rgb(103, 102, 102) solid;
-    border-right: 1px rgb(103, 102, 102) solid;
-    position: relative;
-}
-
-#info-bar {
+.info-bar {
     display: flex;
     width: 599px;
     height: 60px;
     justify-content: flex-start;
     align-items: center;
-    align-content: center;
     position: fixed;
-    z-index: 3;
-    border-right: 1px rgb(103, 102, 102) solid;
+    top: 0;
+    z-index: 4;
+    gap: 10px;
 }
 
-#info-bar button {
+.info-bar button {
     font-family: 'Chirp Regular', sans-serif;
     width: 40px;
     height: 40px;
@@ -53,70 +48,89 @@ main {
     margin-left: 9px;
 }
 
-#info-bar button:hover {
-    background-color: rgb(33, 32, 32);
-}
-
-#info-bar div {
+.info-bar div {
     padding: 10px;
-    margin-left: 10px;
     height: 100%;
 }
 
-#info-bar div p {
+.info-bar div p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
-#info-bar div small {
+.info-bar div small {
     color: rgb(103, 102, 102);
+    font-size: 1.3rem;
 }
 
-#perfil-imgs {
+main {
+    width: 600px;
+    height: 1400px;
+    border-left: 1px rgb(103, 102, 102) solid;
+    border-right: 1px rgb(103, 102, 102) solid;
+}
+
+.info-profile {
+    height: 470px;
+    width: 100%;
+    border-bottom: 1px rgb(103, 102, 102) solid;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
     position: relative;
     height: 290px;
+    width: 100%;
+    overflow: hidden;
 }
 
-#perfil-imgs img:first-child {
-    width: 602px;
+.profile-img img:first-child {
+    width: 600px;
 }
 
-#perfil-imgs img:nth-child(2) {
+.profile-img img:nth-child(2) {
     width: 140px;
     border-radius: 100px;
     border: 3px solid black;
     position: absolute;
     top: 130px;
     left: 20px;
-    z-index: 2;
 }
 
-#perfil-edit {
+.profile-edit {
     position: absolute;
     left: 463px;
     top: 213px;
-    z-index: 1;
 }
 
-#perfil-edit button {
+.profile-edit button {
     font-family: 'Chirp Regular', sans-serif;
     height: 36px;
     width: 117px;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: bold;
     border: 1px rgb(103, 102, 102) solid;
     border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: auto;
     padding: 2px;
 }
 
-#perfil-edit button:hover {
+.info-bar button:hover, .profile-edit button:hover {
     background-color: rgb(33, 32, 32);
 }
 
-#username {
+.user-info {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.username {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -124,59 +138,29 @@ main {
     margin-bottom: 20px;
 }
 
-#username h1 {
-    margin-left: 20px;
-    font-size: 20px;
+.username h1 {
+    font-size: 2rem;
 }
 
-#username p {
-    margin-left: 20px;
-    font-size: 15px;
-    color: rgb(103, 102, 102);
-}
-
-#user-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 15px;
-}
-
-#user-info > p {
-    margin-left: 20px;
-    margin-right: 20px;
+.user-info > p {
     margin-bottom: 15px;
 }
 
-#more-info {
+.more-info, .following {
     display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
     margin-bottom: 15px;
     gap: 15px;
 }
 
-#more-info p {
+.username p, .more-info p, .following p {
     color: rgb(103, 102, 102); 
 }
 
-#following {
-    display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 15px;
+.following {
     gap: 17px;
 }
 
-#following p {
-    color: rgb(103, 102, 102)
-}
-
-#following span {
+.following span {
+    color: white;
     font-weight: bold;
-}
-
-#info {
-    height: 470px;
-    border-bottom: 1px rgb(103, 102, 102) solid;
-    margin-top: 60px;
 }
